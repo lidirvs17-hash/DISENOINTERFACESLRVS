@@ -1,103 +1,170 @@
-/* Variables Globales */
+/* --- VARIABLES Y GUÍA DE ESTILO --- */
 :root {
-    --bg-dark: #0d0d0d;
-    --card-bg: #1a1a1a;
-    --text-light: #f4f4f4;
-    --accent-blue: #00d4ff; /* Brillo Nuka-Cola */
-    --accent-gold: #ffcc00; /* Detalle Premium */
-    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --bg-white: #ffffff;
+    --bg-light: #f9f9f9;
+    --text-dark: #333333;
+    --accent-blue: #0056b3;   
+    --accent-green: #2d5a27;  
+    --accent-orange: #ff8c00; 
+    --accent-gold: #b8860b;   
+    --border-soft: #e0e0e0;
+    --font-main: 'Segoe UI', system-ui, sans-serif;
 }
+
+html { scroll-behavior: smooth; }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    background-color: var(--bg-white);
+    color: var(--text-dark);
     font-family: var(--font-main);
     margin: 0;
-    padding: 20px;
+    line-height: 1.6;
 }
 
-/* Contenedor Grid para la Home */
-.products-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+/* --- CABECERA Y LOGO --- */
+header {
+    background: var(--bg-white);
+    border-bottom: 2px solid var(--border-soft);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-container img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
     gap: 25px;
-    padding: 20px;
+    list-style: none;
 }
 
-/* CAJA MAESTRA: Tarjeta de Producto */
+.nav-menu a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover { color: var(--accent-blue); }
+
+/* --- SECCIONES --- */
+.category-title {
+    border-left: 8px solid var(--accent-green);
+    padding-left: 20px;
+    margin: 3rem 5% 1rem;
+    font-size: 1.6rem;
+    color: var(--accent-green);
+    text-transform: uppercase;
+}
+
+/* --- GRID DE PRODUCTOS (RESPONSIVE) --- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem 5% 4rem;
+}
+
+/* --- CAJA MAESTRA (RA 2.C) --- */
 .card-product {
-    background-color: var(--card-bg);
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #333;
+    background: var(--bg-light);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-product:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
-    border-color: var(--accent-blue);
-}
-
-.category-title {
-    border-left: 5px solid var(--accent-blue);
-    padding-left: 15px;
-    margin: 40px 20px 20px;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* Estilo para los productos Destacados/Oferta */
-.card-product.destacado {
-    border: 2px solid var(--accent-gold);
-}
-
-.badge {
-    background-color: var(--accent-gold);
-    color: #000;
-    font-size: 0.8rem;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 .card-product img {
-    max-width: 100%;
-    height: 200px;
+    width: 100%;
+    height: 220px;
     object-fit: contain;
-    margin-bottom: 15px;
-}
-
-.product-title {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    color: var(--accent-gold);
+    margin-bottom: 1rem;
 }
 
 .product-price {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-blue);
+    margin: 0.5rem 0 1.5rem;
+    text-align: center;
 }
 
-.btn-detail {
-    background-color: var(--accent-blue);
-    color: #000;
+/* --- BOTONES UNIFICADOS --- */
+.btn-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.btn-outline {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-align: center;
     text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background 0.3s;
+    font-size: 0.85rem;
+    transition: all 0.3s;
 }
 
-.btn-detail:hover {
-    background-color: white;
+.btn-blue { border: 2px solid var(--accent-blue); color: var(--accent-blue); }
+.btn-blue:hover { background: var(--accent-blue); color: white; }
+
+.btn-orange { border: 2px solid var(--accent-orange); color: var(--accent-orange); }
+.btn-orange:hover { background: var(--accent-orange); color: white; }
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    background: #ff4444;
+    color: white;
+    padding: 5px 12px;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+/* --- DETALLE SPLIT-SCREEN --- */
+.detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+}
+
+.detail-visual {
+    background: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-visual img { max-width: 70%; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1)); }
+
+.detail-content { padding: 4rem 10%; }
+
+@media (max-width: 768px) {
+    .detail-layout { grid-template-columns: 1fr; }
+    header { flex-direction: column; text-align: center; }
 }

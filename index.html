@@ -3,73 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Fiction Pantry | Supermercado Online</title>
+    <title>The Fiction Pantry | Supermercado  Premium</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <header>
-        <h1>🛒 The Fiction Pantry</h1>
-        <p>Productos de otros mundos, directos a tu mesa.</p>
+        <div class="logo-container">
+            <img src="css/img/logo.png" alt="Logo The Fiction Pantry">
+            <strong>THE FICTION PANTRY</strong>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#alimentacion">Alimentación</a></li>
+                <li><a href="#dulces">Dulces y Congelados</a></li>
+                <li><a href="#cuidado">Cuidado Personal</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="products-container">
-        <section>
-            <h2 class="category-title">Bebidas y Alimentación</h2>
-            <div class="products-container">
-                <article class="card-product destacado">
-                    <div class="badge">OFERTA</div>
+    <main>
+        <section id="alimentacion">
+            <h2 class="category-title">Alimentación Estelar</h2>
+            <div class="products-grid">
+                
+                <article class="card-product">
+                    <span class="badge-offer">OFERTA</span>
                     <img src="css/img/nuka-cola.png" alt="Nuka-Cola Quantum">
-                    <h3 class="product-title">Nuka-Cola Quantum</h3>
+                    <h3>Nuka-Cola Quantum</h3>
                     <p class="product-price">2.50 €</p>
-                    <a href="detalle-nuka.html" class="btn-detail">Ver Detalles</a>
+                    <div class="btn-actions">
+                        <a href="detalle-nuka.html" class="btn-outline btn-blue">Ver Detalles</a>
+                        <button class="btn-outline btn-orange">Al Carrito</button>
+                    </div>
                 </article>
 
-                <article class="card-product destacado">
-                    <div class="badge">RECOMENDADO</div>
+                <article class="card-product">
+                    <span class="badge-offer" style="background: var(--accent-blue);">RECOMENDADO</span>
                     <img src="css/img/noodles.png" alt="Ramen Demon Hunters">
-                    <h3 class="product-title">Ramen Pack: Demon Hunters</h3>
+                    <h3>Ramen Pack: Demon Hunters</h3>
                     <p class="product-price">12.95 €</p>
-                    <a href="detalle-ramen.html" class="btn-detail">Ver Detalles</a>
+                    <div class="btn-actions">
+                        <a href="detalle-noodles.html" class="btn-outline btn-blue">Ver Detalles</a>
+                        <button class="btn-outline btn-orange">Al Carrito</button>
+                    </div>
                 </article>
+                <article class="card-product">
+                    <img src="css/img/Spidey.png" alt="Cereal Spidey-O's">
+                    <h3>Spidey-O's Cereal: Across the Spider-Verse</h3>
+                    <p class="product-price">5.95 €</p>
+                    <div class="btn-actions">
+                        <a href="detalle-spidey.html" class="btn-outline btn-blue">Ver Detalles</a>
+                        <button class="btn-outline btn-orange">Al Carrito</button>
+                    </div>
+                </article>
+
             </div>
         </section>
 
-        <section>
-            <h2 class="category-title">Dulces y Caprichos</h2>
-            <div class="products-container">
+        <section id="dulces">
+            <h2 class="category-title" style="border-color: var(--accent-orange); color: var(--accent-orange);">Dulces y Caprichos</h2>
+            <div class="products-grid">
+                
                 <article class="card-product">
                     <img src="css/img/Konpeito.png" alt="Caramelos Konpeito">
-                    <h3 class="product-title">Caramelos Konpeito (Chihiro)</h3>
+                    <h3>Caramelos Konpeito (Chihiro)</h3>
                     <p class="product-price">4.50 €</p>
-                    <a href="#" class="btn-detail">Añadir al carrito</a>
+                    <div class="btn-actions">
+                        <a href="#" class="btn-outline btn-blue">Ver Detalles</a>
+                        <button class="btn-outline btn-orange">Al Carrito</button>
+                    </div>
                 </article>
 
                 <article class="card-product">
                     <img src="css/img/seasalt.png" alt="Helado Sal Marina">
-                    <h3 class="product-title">Helado de Sal Marina (KH)</h3>
+                    <h3>Helado de Sal Marina (KH)</h3>
                     <p class="product-price">1.50 €</p>
-                    <a href="#" class="btn-detail">Añadir al carrito</a>
+                    <div class="btn-actions">
+                        <a href="#" class="btn-outline btn-blue">Ver Detalles</a>
+                        <button class="btn-outline btn-orange">Al Carrito</button>
+                    </div>
+
                 </article>
+                                <article class="card-product">
+                    <img src="css/img/Lembas.png" alt="Pan de Lembas">
+                    <h3>Pan de Lembas Galadhrim</h3>
+                    <p class="product-price">15.00 €</p>
+                    <div class="btn-actions">
+                        <a href="detalle-lembas.html" class="btn-outline btn-blue">Ver Detalles</a>
+                        <button class="btn-outline btn-orange">Al Carrito</button>
+                    </div>
+                </article>
+                
+                <article class="card-product">
+                    <span class="badge-offer" style="background: var(--accent-gold);">LIMITED EDITION</span>
+                    <img src="css/img/aether-crystals.png" alt="Aether Crystals Rock Candy">
+                    <h3>Aether Crystals Rock Candy</h3>
+                    <p class="product-price">4.25 €</p>
+                    <div class="btn-actions">
+                        <a href="detalle-aether.html" class="btn-outline btn-blue">Ver Detalles</a>
+                        <button class="btn-outline btn-orange">Al Carrito</button>
+                    </div>
+                </article>
+
             </div>
         </section>
 
-        <section>
-            <h2 class="category-title">Cuidado Personal</h2>
-            <div class="products-container">
+        <section id="cuidado">
+            <h2 class="category-title" style="border-color: var(--accent-gold); color: var(--accent-gold);">Cuidado Personal Premium</h2>
+            <div class="products-grid">
+                
                 <article class="card-product">
                     <img src="css/img/soap.png" alt="Jabón Espíritu del Río">
-                    <h3 class="product-title">Jabón del Espíritu del Río</h3>
+                    <h3>Jabón del Espíritu del Río</h3>
                     <p class="product-price">6.00 €</p>
-                    <a href="#" class="btn-detail">Añadir al carrito</a>
+                    <div class="btn-actions">
+                        <a href="#" class="btn-outline btn-blue">Ver Detalles</a>
+                        <button class="btn-outline btn-orange">Al Carrito</button>
+                    </div>
                 </article>
+
+                <article class="card-product">
+                    <img src="css/img/Mask.png" alt="Aura Mask Face Sheets">
+                    <h3>Aura Mask: Elemental Face Sheets</h3>
+                    <p class="product-price">12.00 €</p>
+                    <div class="btn-actions">
+                        <a href="detalle-aura.html" class="btn-outline btn-blue">Ver Detalles</a>
+                        <button class="btn-outline btn-orange">Al Carrito</button>
+                    </div>
+                </article>
+
+                <article class="card-product">
+                    <img src="css/img/yennefer-wash.png" alt="Yennefer Perfume Body Wash">
+                    <h3>Lilac & Gooseberries Body Wash</h3>
+                    <p class="product-price">18.50 €</p>
+                    <div class="btn-actions">
+                        <a href="detalle-yennefer.html" class="btn-outline btn-blue">Ver Detalles</a>
+                        <button class="btn-outline btn-orange">Al Carrito</button>
+                    </div>
+                </article>
+
             </div>
         </section>
-      </main>
+    </main>
 
-<footer>
+    <footer style="text-align: center; padding: 3rem; background: var(--bg-light); border-top: 1px solid var(--border-soft); color: #888; margin-top: 4rem;">
         <p>&copy; 2026 The Fiction Pantry - Proyecto DAW LRVS</p>
- </footer>
+    </footer>
 
 </body>
 </html>
