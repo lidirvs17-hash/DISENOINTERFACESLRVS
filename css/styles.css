@@ -41,8 +41,12 @@ header {
 }
 
 .logo-container img {
-    height: 50px;
-    width: auto;
+    height: 60px;           
+    width: 60px;             
+    object-fit: cover;      
+    border-radius: 50%;    
+    background-color: white; 
+    border: 1px solid var(--border-soft); 
 }
 
 .nav-menu {
@@ -71,7 +75,7 @@ header {
     text-transform: uppercase;
 }
 
-/* --- GRID DE PRODUCTOS (RESPONSIVE) --- */
+/* --- GRID DE PRODUCTOS --- */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -79,7 +83,7 @@ header {
     padding: 1rem 5% 4rem;
 }
 
-/* --- CAJA MAESTRA (RA 2.C) --- */
+/* --- TARJETA DE PRODUCTO --- */
 .card-product {
     background: var(--bg-light);
     border: 1px solid var(--border-soft);
@@ -89,6 +93,7 @@ header {
     flex-direction: column;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Para que la etiqueta no se salga */
 }
 
 .card-product:hover {
@@ -111,7 +116,22 @@ header {
     text-align: center;
 }
 
-/* --- BOTONES UNIFICADOS --- */
+/* --- ETIQUETAS / BADGES --- */
+.badge-offer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #ff4444; /* Rojo para Oferta */
+    color: white;
+    padding: 8px 15px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-bottom-left-radius: 12px;
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+/* --- BOTONES --- */
 .btn-actions {
     display: flex;
     gap: 10px;
@@ -135,36 +155,62 @@ header {
 .btn-orange { border: 2px solid var(--accent-orange); color: var(--accent-orange); }
 .btn-orange:hover { background: var(--accent-orange); color: white; }
 
-.badge {
-    position: absolute;
-    top: 15px;
-    right: 0;
-    background: #ff4444;
-    color: white;
-    padding: 5px 12px;
-    font-weight: bold;
-    font-size: 0.75rem;
-}
+/* --- DETALLE SPLIT-SCREEN (CORREGIDO) --- */
 
-/* --- DETALLE SPLIT-SCREEN --- */
 .detail-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 80vh;
+    display: flex;          
+    flex-wrap: nowrap;      
+    min-height: calc(100vh - 80px); 
+    width: 100%;
 }
 
 .detail-visual {
+    flex: 1;                /* Ocupa el 50% */
     background: #f0f4f8;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    padding: 2rem;
 }
 
-.detail-visual img { max-width: 70%; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1)); }
-
-.detail-content { padding: 4rem 10%; }
-
-@media (max-width: 768px) {
-    .detail-layout { grid-template-columns: 1fr; }
-    header { flex-direction: column; text-align: center; }
+.detail-visual img { 
+    max-width: 80%; 
+    height: auto;
+    filter: drop-shadow(0 15px 35px rgba(0,0,0,0.15)); 
+    z-index: 2;
 }
+
+.detail-content { 
+    flex: 1;                /* Ocupa el otro 50% */
+    padding: 5% 8%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+}
+
+/* El resplandor (nuka-glow) detrás de la imagen */
+.nuka-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 1;
+}
+/* --- RESPONSIVE --- */
+/* Solo se vuelve una columna en móviles */
+@media (max-width: 992px) {
+    .detail-layout { 
+        flex-direction: column; 
+    }
+    .detail-visual, .detail-content {
+        flex: none;
+        width: 100%;
+    }
+    .detail-visual {
+        height: 40vh; /* Altura fija para la imagen en móvil */
+    }
+}
+
